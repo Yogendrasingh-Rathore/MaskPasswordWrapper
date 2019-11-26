@@ -23,7 +23,7 @@ pipeline
                                     STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':
                                     Check console output at "${env.JOB_NAME} [${env.BUILD_NUMBER}]"
                                     """,
-                                    to: 'yogendrasingh.rathore@gmail.com'
+                                    to: 'yogendrasingh.rathore@cuelogic.com'
                                 )
                     }
                 
@@ -37,7 +37,7 @@ pipeline
                                     STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':
                                     Check console output at "${env.JOB_NAME} [${env.BUILD_NUMBER}]"
                                     """,
-                                    recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+                                    to: 'yogendrasingh.rathore@cuelogic.com'
                             )
                   }
         }
