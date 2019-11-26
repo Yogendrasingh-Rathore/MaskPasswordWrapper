@@ -17,28 +17,18 @@ pipeline
         post{
 
             success{
-                       emailext (
-                                    subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                                    body: """
-                                    STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':
-                                    Check console output at "${env.JOB_NAME} [${env.BUILD_NUMBER}]"
-                                    """,
-                                    to: 'yogendrasingh.rathore@cuelogic.com'
-                                )
+                      mail bcc: '', body: "SUCCESS : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' Check console output at '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ",
+                      cc: '', from: 'yogendrasingh.rathore@cuelogic.com', replyTo: '', subject: "SUCCESS : Job \'${env.JOB_NAME} [${env.BUILD_NUMBER}]\'", to: 'yogendrasingh.rathore@cuelogic.com'
+                                
                     }
                 
             
 
             failure{
                 
-                  emailext (
-                                    subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                                    body: """
-                                    STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':
-                                    Check console output at "${env.JOB_NAME} [${env.BUILD_NUMBER}]"
-                                    """,
-                                    to: 'yogendrasingh.rathore@cuelogic.com'
-                            )
+                      mail bcc: '', body: "FAILED : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' Check console output at '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ",
+                      cc: '', from: 'yogendrasingh.rathore@cuelogic.com', replyTo: '', subject: "FAILED : Job \'${env.JOB_NAME} [${env.BUILD_NUMBER}]\'", to: 'yogendrasingh.rathore@cuelogic.com'
+                            
                   }
         }
 }
